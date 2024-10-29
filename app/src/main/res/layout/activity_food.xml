@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_gravity="center_horizontal"
+    android:background="?android:attr/colorBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calorie Today"
+        android:textSize="24dp"
+        android:textColor="?android:textColorPrimary"
+        android:fontFamily="@font/coolvetica_rg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="28 September 2024"
+        android:textSize="14sp"
+        android:textColor="?android:textColorSecondary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <LinearLayout
+        android:id="@+id/Sarapan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/costum_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/salad"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Sarapan"/>
+
+            <TextView
+                android:id="@+id/CalorieTarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="11dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="0.0/487"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/FoodParams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Anda Belum Menambahkan Makanan"/>
+
+        <Button
+            android:id="@+id/tv_calorie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Tambahkan Makanan"
+            android:fontFamily="@font/coolvetica_rg"
+            android:backgroundTint="@color/greenPrimer"
+            android:textSize="14dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/MakanSiang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/costum_rectangle2"
+        app:layout_constraintTop_toBottomOf="@+id/Sarapan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/burger_fries"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Makan Siang"/>
+
+            <TextView
+                android:id="@+id/CalorieTargetSiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="11dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="0.0/487"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/FoodParamsSiang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Anda Belum Menambahkan Makanan"/>
+
+        <Button
+            android:id="@+id/tv_calorie_title_siang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Tambahkan Makanan"
+            android:fontFamily="@font/coolvetica_rg"
+            android:backgroundTint="@color/greenPrimer"
+            android:textSize="14dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/MakanMalam"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/costum_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/MakanSiang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/bowl_chopsticks_noodles"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Makan Malam"/>
+
+            <TextView
+                android:id="@+id/CalorieTargetMalam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="11dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="0.0/487"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/FoodParamsMalam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Anda Belum Menambahkan Makanan"/>
+
+        <Button
+            android:id="@+id/tv_calorie_title_malam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Tambahkan Makanan"
+            android:fontFamily="@font/coolvetica_rg"
+            android:backgroundTint="@color/greenPrimer"
+            android:textSize="14dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/MakanCemilan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/costum_rectangle2"
+        app:layout_constraintTop_toBottomOf="@+id/MakanMalam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/baseline_fastfood_24"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Snacks"/>
+
+            <TextView
+                android:id="@+id/CalorieTargetSnack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="11dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="0.0/487"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/FoodParamsSnack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="11dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Anda Belum Menambahkan Makanan"/>
+
+        <Button
+            android:id="@+id/tv_calorie_title_snack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Tambahkan Makanan"
+            android:fontFamily="@font/coolvetica_rg"
+            android:backgroundTint="@color/greenPrimer"
+            android:textSize="14dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

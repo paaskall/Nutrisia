@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center"> <!-- Mengikuti layout halaman login -->
+
+    <!-- Logo di bagian head (Optional, jika ingin menambahkan logo) -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:layout_gravity="center"
+        android:contentDescription="Logo"
+        android:paddingBottom="24dp"
+        android:src="@mipmap/nutrisia" />
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:fontFamily="@font/roboto_light"/>
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:fontFamily="@font/roboto_light"/>
+
+    <!-- Date of Birth Input (dipindahkan ke bawah email) -->
+    <EditText
+        android:id="@+id/etBirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tanggal Lahir"
+        android:focusable="false"
+        android:clickable="true"
+        android:fontFamily="@font/roboto_light"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:fontFamily="@font/roboto_light"/>
+
+    <!-- Confirm Password Input -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:fontFamily="@font/roboto_light"/>
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Daftar"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/coolvetica_rg"
+        android:backgroundTint="@color/greenPrimer"/>
+
+    <!-- Link to Login -->
+    <TextView
+        android:id="@+id/tvLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sudah punya akun? Login di sini"
+        android:textColor="@android:color/holo_blue_dark"
+        android:fontFamily="@font/roboto_light"
+        android:layout_gravity="center"
+        android:paddingTop="16dp" />
+
+</LinearLayout>

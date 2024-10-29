@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Title Section -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Streak Diary"
+        android:textSize="24dp"
+        android:textColor="?android:textColorPrimary"
+        android:fontFamily="@font/coolvetica_rg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="28 September 2024"
+        android:textSize="14sp"
+        android:textColor="?android:textColorSecondary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_calorie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/costum_rectangle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/fire"/>
+
+        <TextView
+            android:id="@+id/tv_calorie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kalori"
+            android:fontFamily="@font/coolvetica_rg"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="18sp"/>
+
+        <ProgressBar
+            android:id="@+id/progress_calories"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:progress="75"
+            android:max="100"
+            android:progressDrawable="@drawable/costum_progres_bar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_calorie_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget"
+                android:fontFamily="@font/roboto_light"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="Makanan"
+                android:textColor="?android:textColorPrimary"
+                android:layout_marginRight="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="Kegiatan"
+                android:layout_marginRight="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:text="Total"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <!-- Streak Diary Section -->
+    <LinearLayout
+        android:id="@+id/ll_streak_diary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/costum_rectangle2"
+        app:layout_constraintTop_toBottomOf="@+id/ll_calorie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="1.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Streak Diary"
+            android:fontFamily="@font/coolvetica_rg"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Days of the week in a grid format -->
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:rowCount="1">
+
+            <!-- Monday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Senin"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <!-- Use a circle icon or other symbol to indicate completion -->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle" />
+            </LinearLayout>
+
+            <!-- Tuesday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Selasa"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:paddingTop="2dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:src="@drawable/check_circle" />
+            </LinearLayout>
+
+            <!-- Wednesday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Rabu"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle" />
+            </LinearLayout>
+
+            <!-- Thursday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Kamis"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle" />
+            </LinearLayout>
+
+            <!-- Friday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Jumat"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle2" />
+            </LinearLayout>
+
+            <!-- Saturday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Sabtu"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle2" />
+            </LinearLayout>
+
+            <!-- Sunday -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Minggu"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:paddingTop="2dp"
+                    android:src="@drawable/check_circle2" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- Horizontal container for Mood and Food Target Sections -->
+    <LinearLayout
+        android:id="@+id/ll_mood_food_target_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/ll_streak_diary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Mood Section (Below Food Target Section) -->
+        <LinearLayout
+            android:id="@+id/ll_mood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mood Hari Ini"
+                android:fontFamily="@font/coolvetica_rg"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="16sp" />
+
+            <!-- Hearts -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:weightSum="5"
+                android:paddingHorizontal="8dp">
+
+                <ImageView
+                    android:id="@+id/mood_1"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/smile" />
+
+                <ImageView
+                    android:id="@+id/mood_2"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/grinhearts" />
+
+                <ImageView
+                    android:id="@+id/mood_3"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/meh" />
+
+                <ImageView
+                    android:id="@+id/mood_4"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/sad" />
+
+                <ImageView
+                    android:id="@+id/mood_5"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/angry" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <!-- First Food Target -->
+            <LinearLayout
+                android:id="@+id/ll_food_target"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Target Kalori Makanan"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/salad" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Pagi"
+                            android:textColor="?android:textColorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="0 Kkal"
+                            android:textColor="?android:textColorSecondary" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Second Food Target -->
+            <LinearLayout
+                android:id="@+id/ll_food_target1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle2"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Target kalori Makanan"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="15sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/burger_fries"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Siang"
+                            android:textColor="?android:textColorPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="0 Kkal"
+                            android:textColor="?android:textColorSecondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Third Food Target -->
+            <LinearLayout
+                android:id="@+id/ll_food_target2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/costum_rectangle"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Target kalori Makanan"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="15sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/bowl_chopsticks_noodles"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Malam"
+                            android:textColor="?android:textColorPrimary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="0 Kkal"
+                            android:textColor="?android:textColorSecondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_button_section"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/costum_rectangle2">
+
+            <!-- Horizontal Layout for Icon and TextView -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Icon on the left -->
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/jogging"
+                    android:contentDescription="Icon Activity"
+                    android:layout_marginEnd="16dp" />
+
+                <!-- TextView for Activity Description -->
+                <TextView
+                    android:id="@+id/tv_activity_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="13dp"
+                    android:text="Aktivitas yang telah ditambahkan"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Button for Adding Activity, centered below -->
+            <Button
+                android:id="@+id/btn_new_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/greenPrimer"
+                android:text="Tambahkan Aktivitas"
+                android:fontFamily="@font/coolvetica_rg"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="16dp"
+                android:elevation="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/costum_rectangle"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Icon on the left -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/gain_weight"
+                android:contentDescription="Icon Tekanan Darah" />
+
+            <!-- Vertical layout for Texts -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <!-- Title Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berat Badan"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:textSize="16sp" />
+
+                <!-- Date Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="28 September 2024"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45 Kg"
+                android:fontFamily="@font/coolvetica_rg"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

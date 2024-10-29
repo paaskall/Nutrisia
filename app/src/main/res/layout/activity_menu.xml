@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:layout_gravity="center_horizontal"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Title -->
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/nutrisia"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrisia"
+            android:textSize="24dp"
+            android:textColor="?android:textColorPrimary"
+            android:fontFamily="@font/coolvetica_rg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/below_title_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/pamflet"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/below_title_image">
+
+        <!-- Continue program -->
+        <LinearLayout
+            android:id="@+id/BMICalculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/costum_rectangle4"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="BMI Calculate"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/calc"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Program Baru -->
+        <LinearLayout
+            android:id="@+id/OCR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/costum_rectangle4"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolvetica_rg"
+                android:layout_gravity="center"
+                android:text="Check Food"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/calories_calculator"/>
+                </LinearLayout>
+        </LinearLayout>
+
+        <!-- Menu -->
+        <LinearLayout
+            android:id="@+id/DeleteProgram"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/costum_rectangle4"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Weightloss"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/scales"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Menu2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/Menu">
+
+        <!-- Continue program -->
+        <LinearLayout
+            android:id="@+id/BMI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/costum_rectangle4"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="Kritik &amp; saran"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/comment_alt"/>
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Program Baru -->
+        <LinearLayout
+            android:id="@+id/community"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/costum_rectangle4"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolvetica_rg"
+                android:layout_gravity="center"
+                android:text="Community"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/community"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Menu -->
+        <LinearLayout
+            android:id="@+id/AboutUs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/costum_rectangle4"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coolvetica_rg"
+                android:text="About"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/info"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
