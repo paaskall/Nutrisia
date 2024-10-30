@@ -1,39 +1,68 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tv_ocr_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan Food Label"
-        android:textSize="20sp"
-        android:fontFamily="@font/coolvetica_rg"
-        android:paddingBottom="16dp" />
-    <ImageView
-        android:id="@+id/img_food_label"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/baseline_photo_camera_back_24"
-        android:contentDescription="Food Label" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Food Calories"
+            android:textSize="24dp"
+            android:textColor="?android:textColorPrimary"
+            android:fontFamily="@font/coolvetica_rg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btn_scan_ocr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan Label"
-        android:fontFamily="@font/coolvetica_rg"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/greenPrimer"/>
-    <TextView
-        android:id="@+id/tv_nutrition_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nutrition Information"
-        android:paddingTop="16dp"
-        android:visibility="gone" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Food"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/coolvetica_rg"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"/>
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+
+        <Button
+            android:id="@+id/btn_scan_ocr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Label"
+            android:fontFamily="@font/coolvetica_rg"
+            android:backgroundTint="@color/greenPrimer"
+            app:layout_constraintTop_toBottomOf="@id/previewView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_scan_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_scan_ocr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

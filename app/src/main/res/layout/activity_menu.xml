@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,262 +12,286 @@
     android:background="?android:attr/colorBackground">
 
     <!-- Title -->
-    <LinearLayout
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:gravity="center_vertical"
-        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            tools:ignore="MissingConstraints">
+
+            <!-- Logo Aplikasi -->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/nutrisia"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Judul Halaman -->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nutrisia"
+                android:textSize="24sp"
+                android:textColor="?android:textColorPrimary"
+                android:fontFamily="@font/coolvetica_rg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/logo"
+                android:layout_marginStart="8dp" />
+
+            <!-- Ikon Profil di Pojok Kanan -->
+            <ImageView
+                android:id="@+id/icon_profile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@mipmap/nutrisia"
-            android:layout_gravity="center"/>
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nutrisia"
-            android:textSize="24dp"
-            android:textColor="?android:textColorPrimary"
-            android:fontFamily="@font/coolvetica_rg"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-    </LinearLayout>
-
-    <ImageView
         android:id="@+id/below_title_image"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
         android:src="@drawable/pamflet"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
-    <LinearLayout
-        android:id="@+id/Menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="40dp"
-        android:weightSum="3"
-        app:layout_constraintTop_toBottomOf="@id/below_title_image">
-
-        <!-- Continue program -->
-        <LinearLayout
-            android:id="@+id/BMICalculate"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Menu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/costum_rectangle4"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/below_title_image">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- BMI Calculate Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/BMICalculate"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/coolvetica_rg"
-                android:text="BMI Calculate"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/OCR">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/calc"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Program Baru -->
-        <LinearLayout
-            android:id="@+id/OCR"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/costum_rectangle4"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/coolvetica_rg"
-                android:layout_gravity="center"
-                android:text="Check Food"
-                android:layout_marginBottom="16dp"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/BMICalculateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="vertical">
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="BMI Calc"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/calories_calculator"/>
-                </LinearLayout>
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/calc"
+                    app:layout_constraintTop_toBottomOf="@id/BMICalculateText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Menu -->
-        <LinearLayout
-            android:id="@+id/DeleteProgram"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/costum_rectangle4"
-            android:padding="16dp"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Check Food Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/OCR"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coolvetica_rg"
-                android:text="Weightloss"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/BMICalculate"
+                app:layout_constraintEnd_toStartOf="@id/DeleteProgram">
 
-            <LinearLayout
-                    android:orientation="vertical"
+                <TextView
+                    android:id="@+id/OCRText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/scales"/>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/Menu2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:weightSum="3"
-        app:layout_constraintTop_toBottomOf="@id/Menu">
-
-        <!-- Continue program -->
-        <LinearLayout
-            android:id="@+id/BMI"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/costum_rectangle4"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/coolvetica_rg"
-                android:text="Kritik &amp; saran"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/comment_alt"/>
-            </LinearLayout>
-        </LinearLayout>
-        <!-- Program Baru -->
-        <LinearLayout
-            android:id="@+id/community"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/costum_rectangle4"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/coolvetica_rg"
-                android:layout_gravity="center"
-                android:text="Community"
-                android:layout_marginBottom="16dp"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Check Food"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
                 <ImageView
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/community"/>
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/calories_calculator"
+                    app:layout_constraintTop_toBottomOf="@id/OCRText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- Menu -->
-        <LinearLayout
-            android:id="@+id/AboutUs"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/costum_rectangle4"
-            android:padding="16dp"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Weightloss Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/DeleteProgram"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coolvetica_rg"
-                android:text="About"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/OCR"
+                app:layout_constraintEnd_toEndOf="parent">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/DeleteProgramText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Weightloss"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
                 <ImageView
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/info"/>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/scales"
+                    app:layout_constraintTop_toBottomOf="@id/DeleteProgramText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Menu2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/Menu">
+
+            <!-- Kritik & Saran Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/BMI"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/community">
+
+                <TextView
+                    android:id="@+id/BMIText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Kritik"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/comment_alt"
+                    app:layout_constraintTop_toBottomOf="@id/BMIText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Community Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/community"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/BMI"
+                app:layout_constraintEnd_toStartOf="@+id/AboutUs">
+
+                <TextView
+                    android:id="@+id/communityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="Community"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/community"
+                    app:layout_constraintTop_toBottomOf="@id/communityText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- About Section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/AboutUs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/costum_rectangle4"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/community"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/AboutUsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/coolvetica_rg"
+                    android:text="About"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/info"
+                    app:layout_constraintTop_toBottomOf="@id/AboutUsText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

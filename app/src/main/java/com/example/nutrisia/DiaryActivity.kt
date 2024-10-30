@@ -1,66 +1,87 @@
 package com.example.nutrisia
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 
 class DiaryActivity : AppCompatActivity() {
-
-    private lateinit var tvTitle: TextView
-    private lateinit var tvDate: TextView
-    private lateinit var progressCalories: ProgressBar
-    private lateinit var tvCalorieBudget: TextView
-    private lateinit var tvFoodTargetMorning: TextView
-    private lateinit var ivMood: ImageView
-    private lateinit var moodImages: Array<ImageView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_streak)
 
         // Initialize views
-        tvTitle = findViewById(R.id.tv_title)
-        tvDate = findViewById(R.id.tv_date)
-        progressCalories = findViewById(R.id.progress_calories)
-        tvCalorieBudget = findViewById(R.id.tv_calorie_budget)
-        tvFoodTargetMorning = findViewById(R.id.ll_food_target)
-        ivMood = findViewById(R.id.ll_mood)
+        val btnNewSection = findViewById<Button>(R.id.btn_new_section)
+        val llCalorie = findViewById<ConstraintLayout>(R.id.ll_calorie)
+        val llStreakDiary = findViewById<ConstraintLayout>(R.id.ll_streak_diary)
+        val llFoodTarget = findViewById<LinearLayout>(R.id.ll_food_target)
+        val llFoodTarget1 = findViewById<LinearLayout>(R.id.ll_food_target1)
+        val llFoodTarget2 = findViewById<LinearLayout>(R.id.ll_food_target2)
+        val moodIcons = listOf(
+            findViewById<ImageView>(R.id.mood_1),
+            findViewById<ImageView>(R.id.mood_2),
+            findViewById<ImageView>(R.id.mood_3),
+            findViewById<ImageView>(R.id.mood_4),
+            findViewById<ImageView>(R.id.mood_5)
+        )
 
-        // Set initial data
-        setDiaryDate("28 September 2024")
-        setCalorieProgress(1200, 2000)
-        setFoodTargetMorning(0)
-        setMoodLevel(3)
-    }
+        // Handle click for Add Activity button
+        btnNewSection.setOnClickListener {
+            Toast.makeText(this, "Adding new activity", Toast.LENGTH_SHORT).show()
+        }
 
-    // Set the diary date
-    private fun setDiaryDate(date: String) {
-        tvDate.text = date
-    }
+        // Handle click for Calorie section
+        llCalorie.setOnClickListener {
+            Toast.makeText(this, "Opening calorie details", Toast.LENGTH_SHORT).show()
+        }
 
-    // Set the progress for calorie intake
-    private fun setCalorieProgress(currentCalories: Int, calorieBudget: Int) {
-        tvCalorieBudget.text = "Budget: $calorieBudget"
-        progressCalories.max = calorieBudget
-        progressCalories.progress = currentCalories
-    }
+        // Handle click for Streak Diary section
+        llStreakDiary.setOnClickListener {
+            Toast.makeText(this, "Opening streak details", Toast.LENGTH_SHORT).show()
+        }
 
-    // Set food target for morning
-    private fun setFoodTargetMorning(count: Int) {
-        tvFoodTargetMorning.text = "$count Makanan"
-    }
+        // Handle clicks for Food Target sections
+        llFoodTarget.setOnClickListener {
+            val intent = Intent(this, FoodActivity::class.java).apply {
+                putExtra("MEAL_TIME", "breakfast")
+            }
+            startActivity(intent)
+            Toast.makeText(this, "Opening breakfast details", Toast.LENGTH_SHORT).show()
+        }
 
-    // Set mood level (1-5) and update mood icons accordingly
-    private fun setMoodLevel(level: Int) {
-        for (i in moodImages.indices) {
-            if (i < level) {
-                moodImages[i].setImageResource(R.drawable.grinhearts) // Filled heart
-            } else {
-                moodImages[i].setImageResource(R.drawable.sad) // Empty heart
+        llFoodTarget1.setOnClickListener {
+            val intent = Intent(this, FoodActivity::class.java).apply {
+                putExtra("MEAL_TIME", "lunch")
+            }
+            startActivity(intent)
+            Toast.makeText(this, "Opening lunch details", Toast.LENGTH_SHORT).show()
+        }
+
+        llFoodTarget2.setOnClickListener {
+            val intent = Intent(this, FoodActivity::class.java).apply {
+                putExtra("MEAL_TIME", "dinner")
+            }
+            startActivity(intent)
+            Toast.makeText(this, "Opening dinner details", Toast.LENGTH_SHORT).show()
+        }
+
+        // Handle clicks for Mood icons
+        moodIcons.forEachIndexed { index, imageView ->
+            imageView.setOnClickListener {
+                // Update mood selection UI
+                moodIcons.forEach { it.alpha = 0.5f }
+                imageView.alpha = 1.0f
+                val moodNames = listOf("Happy", "Love", "Neutral", "Sad", "Angry")
+                Toast.makeText(this, "Mood set to: ${moodNames[index]}", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
             }
         }
     }

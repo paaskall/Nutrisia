@@ -22,6 +22,8 @@
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Username"
         android:fontFamily="@font/roboto_light"/>
 
@@ -30,6 +32,8 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:inputType="textEmailAddress"
         android:hint="Email"
         android:fontFamily="@font/roboto_light"/>
@@ -39,6 +43,8 @@
         android:id="@+id/etBirthDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Tanggal Lahir"
         android:focusable="false"
         android:clickable="true"
@@ -49,6 +55,8 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:fontFamily="@font/roboto_light"/>
@@ -58,6 +66,8 @@
         android:id="@+id/etConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:fontFamily="@font/roboto_light"/>
@@ -67,6 +77,8 @@
         android:id="@+id/btnRegister"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
         android:text="Daftar"
         android:gravity="center"
         android:layout_gravity="center"

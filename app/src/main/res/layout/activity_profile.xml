@@ -1,35 +1,94 @@
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tv_profile_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Profile"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingBottom="16dp" />
-
-    <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username: " />
-
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: " />
-
-    <Button
-        android:id="@+id/btn_logout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout" />
-</LinearLayout>
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Profile Title -->
+        <TextView
+            android:id="@+id/profileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile Page"
+            android:fontFamily="@font/coolvetica_rg"
+            android:textSize="24sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Profile Picture ImageView -->
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile Picture"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Button for Uploading New Photo -->
+        <Button
+            android:id="@+id/buttonUploadPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coolvetica_rg"
+            android:text="Upload Photo"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#7FB486"
+            android:textColor="#FFFFFF"/>
+
+        <!-- Full Name Input Field -->
+        <EditText
+            android:id="@+id/editTextFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Full Name"
+            android:enabled="false"
+            />
+
+        <!-- Email Input Field -->
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:enabled="false"/>
+
+        <!-- Password Input Field -->
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:inputType="textPassword"
+            android:enabled="false"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Edit Profile Button -->
+        <Button
+            android:id="@+id/buttonEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coolvetica_rg"
+            android:text="Edit Profile"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#7FB486"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>
