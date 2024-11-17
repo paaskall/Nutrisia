@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,16 +11,38 @@
         android:background="?android:attr/colorBackground">
 
         <!-- Title -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BMI Calculate"
-            android:textSize="24dp"
-            android:textColor="?android:textColorPrimary"
-            android:fontFamily="@font/coolvetica_rg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            tools:ignore="MissingConstraints">
+
+            <!-- Logo Aplikasi -->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/nutrisia"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Judul Halaman -->
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI Calculate"
+                android:textSize="24sp"
+                android:textColor="?android:textColorPrimary"
+                android:fontFamily="@font/coolvetica_rg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/logo"
+                android:layout_marginStart="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Gender Selection Layout -->
         <LinearLayout
@@ -96,7 +119,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
 
         <!-- Weight Input -->
         <EditText
@@ -110,7 +135,9 @@
             app:layout_constraintTop_toBottomOf="@id/etHeight"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
 
         <!-- Activity Level Input with Icon -->
         <LinearLayout
@@ -129,8 +156,7 @@
                 android:id="@+id/imgActivityIcon"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/jogging"
-                android:contentDescription="Icon for Activity Level"/>
+                android:src="@drawable/jogging" />
 
             <Spinner
                 android:id="@+id/spinnerActivityLevel"
@@ -163,7 +189,7 @@
             android:text=""
             android:textSize="36sp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:fontFamily="@font/coolvetica_rg"
             app:layout_constraintTop_toBottomOf="@id/btnCalculateBMI"
             app:layout_constraintStart_toStartOf="parent"
@@ -174,11 +200,12 @@
             android:id="@+id/tvBMIDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text=""
             android:textAlignment="center"
             android:textSize="16sp"
             android:fontFamily="@font/roboto_light"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             app:layout_constraintTop_toBottomOf="@id/tvBMIResult"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

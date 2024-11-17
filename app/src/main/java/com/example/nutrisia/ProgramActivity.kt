@@ -3,6 +3,7 @@ package com.example.nutrisia
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -18,20 +19,28 @@ class ProgramActivity : AppCompatActivity() {
         setContentView(R.layout.activity_program) // Pastikan nama layout file-nya benar
 
         // Inisialisasi Views
-        val tvTitle: TextView = findViewById(R.id.tv_title)
+        val tvTitle: ConstraintLayout = findViewById(R.id.tv_title)
         val btnStartProgram1: Button = findViewById(R.id.btnStartProgram1)
         val targetKalori: TextView = findViewById(R.id.TargetKalori)
         val imgProgressChart: ImageView = findViewById(R.id.imgProgressChart)
-
         val continueProgram: ConstraintLayout = findViewById(R.id.ContinueProgram)
         val newProgram: ConstraintLayout = findViewById(R.id.NewProgram)
         val deleteProgram: ConstraintLayout = findViewById(R.id.DeleteProgram)
+        val button: ImageView = findViewById(R.id.logo)
+
+
+        button.setOnClickListener{
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
 
         // Set Listener untuk memulai program (contoh sederhana)
         btnStartProgram1.setOnClickListener {
             // Tambahkan logika yang ingin dijalankan saat program dimulai
             val intent = Intent(this, DiaryActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         continueProgram.setOnClickListener {

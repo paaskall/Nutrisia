@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.nutrisia.databinding.FragmentOnboardingBinding
 
@@ -49,6 +50,11 @@ class OnboardingFragment : Fragment() {
         imageRes?.let {
             binding.onboardingImage.setImageResource(it)
         }
+
+        // Menambahkan animasi fade-in untuk elemen-elemen UI
+        binding.onboardingTitle.startAnimation(AnimationUtils.loadAnimation(requireContext(), android.R.anim.fade_in))
+        binding.onboardingDescription.startAnimation(AnimationUtils.loadAnimation(requireContext(), android.R.anim.fade_in))
+        binding.onboardingImage.startAnimation(AnimationUtils.loadAnimation(requireContext(), android.R.anim.fade_in))
     }
 
     override fun onDestroyView() {

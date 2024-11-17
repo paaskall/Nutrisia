@@ -2,24 +2,47 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:layout_gravity="center_horizontal"
         android:background="?android:attr/colorBackground">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv_calorie_today"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Calorie Today"
-            android:textSize="24dp"
-            android:textColor="?android:textColorPrimary"
-            android:fontFamily="@font/coolvetica_rg"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            tools:ignore="MissingConstraints">
+
+            <!-- Logo Aplikasi -->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@mipmap/nutrisia"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Judul Halaman -->
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calorie Today"
+                android:textSize="24sp"
+                android:textColor="?android:textColorPrimary"
+                android:fontFamily="@font/coolvetica_rg"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/logo"
+                android:layout_marginStart="8dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tv_date"
@@ -29,9 +52,9 @@
             android:text="28 September 2024"
             android:textSize="14sp"
             android:textColor="?android:textColorSecondary"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_calorie_today"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="16dp"/>
 
         <LinearLayout
             android:id="@+id/Sarapan"
@@ -39,7 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/costum_rectangle"
             app:layout_constraintTop_toBottomOf="@+id/tv_date"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +88,7 @@
                     android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:textSize="18dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/coolvetica_rg"
                     android:text="Sarapan"/>
 
@@ -73,6 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textSize="11dp"
                     android:fontFamily="@font/roboto_light"
                     android:text="0.0/487"/>
@@ -85,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textSize="11dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/roboto_light"
                 android:text="Anda Belum Menambahkan Makanan"/>
 
@@ -96,6 +121,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Tambahkan Makanan"
+                android:textColor="@color/white"
                 android:fontFamily="@font/coolvetica_rg"
                 android:backgroundTint="@color/greenPrimer"
                 android:textSize="14dp"/>
@@ -133,6 +159,7 @@
                     android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:textSize="18dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/coolvetica_rg"
                     android:text="Makan Siang"/>
 
@@ -142,6 +169,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="11dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/roboto_light"
                     android:text="0.0/487"/>
 
@@ -153,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textSize="11dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/roboto_light"
                 android:text="Anda Belum Menambahkan Makanan"/>
 
@@ -163,6 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/white"
                 android:text="Tambahkan Makanan"
                 android:fontFamily="@font/coolvetica_rg"
                 android:backgroundTint="@color/greenPrimer"
@@ -201,6 +230,7 @@
                     android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:textSize="18dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/coolvetica_rg"
                     android:text="Makan Malam"/>
 
@@ -209,6 +239,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
+                    android:textColor="@color/black"
                     android:textSize="11dp"
                     android:fontFamily="@font/roboto_light"
                     android:text="0.0/487"/>
@@ -221,16 +252,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textSize="11dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/roboto_light"
                 android:text="Anda Belum Menambahkan Makanan"/>
 
             <Button
-                android:id="@+id/tv_calorie_title_malam"
+                android:id="@+id/BTN_calorie_title_malam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/white"
                 android:text="Tambahkan Makanan"
                 android:fontFamily="@font/coolvetica_rg"
                 android:backgroundTint="@color/greenPrimer"
@@ -269,6 +301,7 @@
                     android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:textSize="18dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/coolvetica_rg"
                     android:text="Snacks"/>
 
@@ -278,6 +311,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="11dp"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/roboto_light"
                     android:text="0.0/487"/>
 
@@ -289,7 +323,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textAlignment="center"
-                android:textSize="11dp"
+                android:textColor="@color/black"
                 android:fontFamily="@font/roboto_light"
                 android:text="Anda Belum Menambahkan Makanan"/>
 
@@ -300,6 +334,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Tambahkan Makanan"
+                android:textColor="@color/white"
                 android:fontFamily="@font/coolvetica_rg"
                 android:backgroundTint="@color/greenPrimer"
                 android:textSize="14dp"/>

@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="?android:attr/colorBackground">
 
     <!-- Logo atau Teks -->
     <ImageView

@@ -32,20 +32,27 @@ class DiaryActivity : AppCompatActivity() {
             findViewById<ImageView>(R.id.mood_4),
             findViewById<ImageView>(R.id.mood_5)
         )
+        val button: ImageView = findViewById(R.id.logo)
+
+        button.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
 
         // Handle click for Add Activity button
         btnNewSection.setOnClickListener {
-            Toast.makeText(this, "Adding new activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Aktivitas di tambahkan", Toast.LENGTH_SHORT).show()
         }
 
         // Handle click for Calorie section
         llCalorie.setOnClickListener {
-            Toast.makeText(this, "Opening calorie details", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Membuka detail kalori", Toast.LENGTH_SHORT).show()
         }
 
         // Handle click for Streak Diary section
         llStreakDiary.setOnClickListener {
-            Toast.makeText(this, "Opening streak details", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Membuka detail runtutan", Toast.LENGTH_SHORT).show()
         }
 
         // Handle clicks for Food Target sections
@@ -54,7 +61,7 @@ class DiaryActivity : AppCompatActivity() {
                 putExtra("MEAL_TIME", "breakfast")
             }
             startActivity(intent)
-            Toast.makeText(this, "Opening breakfast details", Toast.LENGTH_SHORT).show()
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         llFoodTarget1.setOnClickListener {
@@ -62,7 +69,7 @@ class DiaryActivity : AppCompatActivity() {
                 putExtra("MEAL_TIME", "lunch")
             }
             startActivity(intent)
-            Toast.makeText(this, "Opening lunch details", Toast.LENGTH_SHORT).show()
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         llFoodTarget2.setOnClickListener {
@@ -70,7 +77,7 @@ class DiaryActivity : AppCompatActivity() {
                 putExtra("MEAL_TIME", "dinner")
             }
             startActivity(intent)
-            Toast.makeText(this, "Opening dinner details", Toast.LENGTH_SHORT).show()
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         // Handle clicks for Mood icons

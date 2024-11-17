@@ -28,7 +28,7 @@
                 android:src="@mipmap/nutrisia"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <!-- Judul Halaman -->
             <TextView
@@ -60,7 +60,7 @@
         android:id="@+id/below_title_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/pamflet"
+        android:src="@drawable/image"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent"

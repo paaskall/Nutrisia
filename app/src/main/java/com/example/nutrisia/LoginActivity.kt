@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nutrisia.MenuActivity
-import com.example.nutrisia.R
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var etUsername: EditText
@@ -36,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
             } else {
                 Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show()
             }
@@ -46,11 +45,13 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Fitur lupa password belum tersedia", Toast.LENGTH_SHORT).show()
         }
 
-        // Register link click listener
+        // Register link click listener with transition
         tvRegisterLink.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-            Toast.makeText(this, "Ayo daftar akun baru", Toast.LENGTH_SHORT).show()
+
+            // Menambahkan animasi transisi
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
     }
 }

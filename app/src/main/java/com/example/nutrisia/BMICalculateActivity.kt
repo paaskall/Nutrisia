@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.nutrisia.R
 
 class BMICalculateActivity : AppCompatActivity() {
 
@@ -20,6 +18,7 @@ class BMICalculateActivity : AppCompatActivity() {
     private lateinit var tvBMIDesc: TextView
     private lateinit var btnCalculateBMI: Button
     private lateinit var btnViewPrograms: Button
+    private lateinit var button: ImageView // Inisialisasi ImageView button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +34,7 @@ class BMICalculateActivity : AppCompatActivity() {
         tvBMIDesc = findViewById(R.id.tvBMIDesc)
         btnCalculateBMI = findViewById(R.id.btnCalculateBMI)
         btnViewPrograms = findViewById(R.id.btnViewPrograms)
+        button = findViewById(R.id.logo) // Inisialisasi ImageView button setelah setContentView
 
         // Menambahkan klik listener untuk tombol Hitung BMI
         btnCalculateBMI.setOnClickListener {
@@ -45,6 +45,14 @@ class BMICalculateActivity : AppCompatActivity() {
         btnViewPrograms.setOnClickListener {
             val intent = Intent(this, ProgramActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
+        }
+
+        // Menambahkan klik listener untuk logo (ImageView)
+        button.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
     }
 

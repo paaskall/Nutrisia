@@ -5,7 +5,5 @@
         <item name="colorPrimary">@color/greenPrimer</item>
         <item name="colorPrimaryDark">@color/greenPrimer</item> <!-- untuk warna status bar -->
     </style>
-
-
     <style name="Theme.Nutrisia" parent="Base.Theme.Nutrisia" />
 </resources>

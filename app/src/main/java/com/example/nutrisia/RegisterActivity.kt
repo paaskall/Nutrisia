@@ -59,17 +59,18 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Password tidak cocok", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                 finish()
             }
         }
 
         // Login link click listener
         tvLoginLink.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            Toast.makeText(this, "Silakan login dengan akun yang sudah terdaftar", Toast.LENGTH_SHORT).show()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
     }
 }

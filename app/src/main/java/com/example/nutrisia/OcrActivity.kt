@@ -1,7 +1,9 @@
 package com.example.nutrisia
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Size
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,7 @@ class OcrActivity : AppCompatActivity() {
     private lateinit var previewView: PreviewView
     private lateinit var tvScanResult: TextView
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var button: ImageView // Inisialisasi ImageView button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +34,17 @@ class OcrActivity : AppCompatActivity() {
 
         previewView = findViewById(R.id.previewView)
         tvScanResult = findViewById(R.id.tv_scan_result)
+        button = findViewById(R.id.logo) // Inisialisasi ImageView button
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         startCamera()
+
+        // Menambahkan click listener untuk button
+        button.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
     }
 
     private fun startCamera() {

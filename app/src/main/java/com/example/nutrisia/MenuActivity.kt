@@ -30,16 +30,19 @@ class MenuActivity : AppCompatActivity() {
         bmiCalculateMenu.setOnClickListener {
             val intent = Intent(this, BMICalculateActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         ocrMenu.setOnClickListener {
             val intent = Intent(this, OcrActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         weightlossMenu.setOnClickListener {
             val intent = Intent(this, ProgramActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
 
         kritikSaranMenu.setOnClickListener {
@@ -53,12 +56,14 @@ class MenuActivity : AppCompatActivity() {
         aboutUsMenu.setOnClickListener {
             val intent = Intent(this, AboutUsActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
         // Set OnClickListener pada ikon profil
         iconProfile.setOnClickListener {
             // Intent untuk membuka ProfileActivity
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
+            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
     }
 }

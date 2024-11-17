@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#F7F3F9"
     android:gravity="center">
 
     <!-- Logo atau Gambar Aplikasi -->
@@ -22,11 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nutrisia"
-        android:textStyle="bold"
-        android:textSize="26sp"
+        android:textSize="40dp"
         android:fontFamily="@font/coolvetica_rg"
-        android:textColor="@color/black"
-        android:layout_marginBottom="1dp" />
+        android:layout_marginBottom="20dp" />
 
     <!-- Deskripsi Aplikasi -->
     <TextView
@@ -35,7 +32,6 @@
         android:layout_height="wrap_content"
         android:text="Aplikasi NUTRISIA (Nutrisi Terpantau Sehat Ideal dan Akurat) membantu mencegah obesitas dengan memindai label nutrisi makanan melalui Smart OCR. Dilengkapi rekomendasi diet sesuai data fisik dan fitur penghitungan kalori, NUTRISIA mendukung keputusan diet yang lebih sehat."
         android:textSize="16sp"
-        android:textColor="#333333"
         android:fontFamily="@font/roboto_regular"
         android:lineSpacingExtra="2dp"
         android:gravity="center"
@@ -49,7 +45,6 @@
         android:text="Our Team"
         android:textSize="20sp"
         android:fontFamily="@font/coolvetica_rg"
-        android:textColor="@color/black"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp" />
 
@@ -60,10 +55,9 @@
         android:layout_height="wrap_content"
         android:text="• Ahmad Fadhil Ikram\n• Adinda Khusnul Khotimah\n• Paskal Arvito Weni\n• Sri Husna Anggraeni"
         android:textSize="16sp"
-        android:textColor="#333333"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        android:lineSpacingExtra="8dp" />
+        android:lineSpacingExtra="4dp" />
 
     <!-- Button untuk informasi lebih lanjut atau kontak -->
     <Button
@@ -71,9 +65,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact Us"
+        android:textColor="@color/white"
         android:fontFamily="@font/coolvetica_rg"
         android:backgroundTint="#7FB486"
-        android:textColor="#FFFFFF"
         android:layout_marginTop="24dp"
         android:padding="12dp" />
 
