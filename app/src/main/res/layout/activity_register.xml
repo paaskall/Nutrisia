@@ -48,7 +48,7 @@
 
     <!-- FullName Input -->
         <EditText
-            android:id="@+id/etNamaLengkap"
+            android:id="@+id/etFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
