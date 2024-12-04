@@ -72,6 +72,7 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+            finish()
         }
     }
 
@@ -92,12 +93,13 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.makeText(this@RegisterActivity, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                         startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
                         finish()
                     } else {
-                        Toast.makeText(this@RegisterActivity, result?.message ?: "Registrasi Gagal", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@RegisterActivity, "Username atau email sudah digunakan", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Registrasi Gagal: ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Registrasi Gagal", Toast.LENGTH_SHORT).show()
                 }
             }
 

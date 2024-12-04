@@ -51,7 +51,16 @@
             android:layout_marginRight="20dp"
             android:fontFamily="@font/roboto_light"
             android:hint="Full Name"
-            android:enabled="false"
+            />
+
+        <EditText
+            android:id="@+id/editUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Username"
             />
 
         <!-- Email Input Field -->
@@ -64,7 +73,17 @@
             android:fontFamily="@font/roboto_light"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:enabled="false"/>
+            />
+
+        <EditText
+            android:id="@+id/editBirthDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Tanggal Lahir"
+            />
 
         <!-- Password Input Field -->
         <EditText
@@ -76,7 +95,6 @@
             android:layout_marginRight="20dp"
             android:fontFamily="@font/roboto_light"
             android:inputType="textPassword"
-            android:enabled="false"
             android:layout_marginBottom="16dp" />
 
         <!-- Edit Profile Button -->
