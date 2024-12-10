@@ -61,7 +61,7 @@ class MenuActivity : AppCompatActivity() {
         // Set OnClickListener pada ikon profil
         iconProfile.setOnClickListener {
             // Intent untuk membuka ProfileActivity
-            val intent = Intent(this, ProfileActivity::class.java)
+            val intent = Intent(this, ActivityUserInformation::class.java)
             startActivity(intent)
             // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
         }
