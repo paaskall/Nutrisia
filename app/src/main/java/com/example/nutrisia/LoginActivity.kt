@@ -1,34 +1,45 @@
 package com.example.nutrisia
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
-    private lateinit var cbRememberMe: CheckBox
     private lateinit var btnLogin: Button
     private lateinit var tvForgotPassword: TextView
     private lateinit var tvRegisterLink: TextView
 
+    private val sharedPreferences by lazy {
+        getSharedPreferences("NutrisiaPrefs", Context.MODE_PRIVATE)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Periksa apakah pengguna sudah login sebelumnya
+        if (sharedPreferences.getBoolean("isLoggedIn", false)) {
+            navigateToMenu()
+            return
+        }
+
         setContentView(R.layout.acivity_login)
 
-        // Initialize views
+        // Inisialisasi tampilan
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
-        cbRememberMe = findViewById(R.id.cbRememberMe)
         btnLogin = findViewById(R.id.btnLogin)
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
         tvRegisterLink = findViewById(R.id.tvRegisterLink)
 
-        // Set up Login button click listener
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString()
             val password = etPassword.text.toString()
@@ -38,48 +49,61 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Membuat instance LoginData
-            val loginData = LoginData(username = username, password = password)
+            val loginRequest = LoginRequest(username, password)
 
-            // Panggil API untuk login
-            RetrofitClient.instance.loginUser(loginData).enqueue(object : Callback<LoginData> {
-                override fun onResponse(call: Call<LoginData>, response: Response<LoginData>) {
+            RetrofitClient.instance.loginUser(loginRequest).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful && response.body()?.status == "success") {
                         Toast.makeText(this@LoginActivity, "Login Berhasil", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@LoginActivity, MenuActivity::class.java)
-                        startActivity(intent)
-                        finish()
+
+                        // Simpan status login dan ID user ke SharedPreferences
+                        val editor = sharedPreferences.edit()
+                        editor.putBoolean("isLoggedIn", true)
+                        editor.putInt("user_id", response.body()?.data?.id ?: -1)
+                        editor.apply()
+
+                        navigateToMenu()
                     } else {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "Login Gagal: ${response.body()?.message ?: "Terjadi kesalahan"}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@LoginActivity, "Login Gagal", Toast.LENGTH_SHORT).show()
                     }
                 }
 
-                override fun onFailure(call: Call<LoginData>, t: Throwable) {
-                    Toast.makeText(
-                        this@LoginActivity,
-                        "Kesalahan Jaringan: ${t.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(this@LoginActivity, "Kesalahan jaringan: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
         }
 
-        // Forgot Password click listener
         tvForgotPassword.setOnClickListener {
-            Toast.makeText(this, "Fitur lupa password belum tersedia", Toast.LENGTH_SHORT).show()
+            showForgotPasswordDialog()
         }
 
-        // Register link click listener with transition
         tvRegisterLink.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-
-            // Menambahkan animasi transisi
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_left_left)
+            navigateToRegister()
         }
+    }
+
+    private fun navigateToMenu() {
+        val intent = Intent(this, MenuActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    private fun showForgotPasswordDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Lupa Password?")
+            .setMessage("Silakan hubungi saya melalui WhatsApp di nomor 089502743924")
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun navigateToRegister() {
+        val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+        startActivity(intent)
+
+        finish()
     }
 }
