@@ -19,22 +19,22 @@ class DiaryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_daily_streak)
 
         // Initialize views
-        val btnNewSection = findViewById<Button>(R.id.btn_new_section)
+        //val btnNewSection = findViewById<Button>(R.id.btn_new_section)
         val llCalorie = findViewById<ConstraintLayout>(R.id.ll_calorie)
-        val llStreakDiary = findViewById<ConstraintLayout>(R.id.ll_streak_diary)
+        //val llStreakDiary = findViewById<ConstraintLayout>(R.id.ll_streak_diary)
         val llFoodTarget = findViewById<LinearLayout>(R.id.ll_food_target)
         val llFoodTarget1 = findViewById<LinearLayout>(R.id.ll_food_target1)
         val llFoodTarget2 = findViewById<LinearLayout>(R.id.ll_food_target2)
-        val moodIcons = listOf(
+        /*val moodIcons = listOf(
             findViewById<ImageView>(R.id.mood_1),
             findViewById<ImageView>(R.id.mood_2),
             findViewById<ImageView>(R.id.mood_3),
             findViewById<ImageView>(R.id.mood_4),
             findViewById<ImageView>(R.id.mood_5)
-        )
+        )*/
         val button: ImageView = findViewById(R.id.logo)
 
-        button.setOnClickListener {
+        /*button.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
             // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
@@ -90,6 +90,6 @@ class DiaryActivity : AppCompatActivity() {
                 Toast.makeText(this, "Mood set to: ${moodNames[index]}", Toast.LENGTH_SHORT).show()
                 startActivity(intent)
             }
-        }
+        }*/
     }
 }

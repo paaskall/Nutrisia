@@ -39,12 +39,12 @@ class OcrActivity : AppCompatActivity() {
 
         startCamera()
 
-        // Menambahkan click listener untuk button
+        /* Menambahkan click listener untuk button
         button.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
             // overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        }
+        } */
     }
 
     private fun startCamera() {

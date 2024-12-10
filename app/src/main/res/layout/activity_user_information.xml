@@ -140,7 +140,7 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/coolvetica_rg"
                 android:text="Logout"
-                android:backgroundTint="#FF5252"
+                android:backgroundTint="#FF9999"
                 android:textColor="#FFFFFF" />
 
             <!-- Edit Profile Button -->

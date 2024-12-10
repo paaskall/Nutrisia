@@ -43,8 +43,30 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/logo"
-                android:layout_marginStart="8dp" />
+                android:layout_marginStart="8dp"/>
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_NameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coolvetica_rg"
+            android:text="Hello Paskal"
+            android:textSize="48sp"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"/>
 
         <TextView
             android:id="@+id/tv_date"
@@ -53,10 +75,21 @@
             android:fontFamily="@font/roboto_light"
             android:text="28 September 2024"
             android:textSize="14sp"
-            android:textColor="?android:textColorSecondary"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="16dp"/>
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/tv_NameUser"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_Program"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/coolvetica_rg"
+            android:text="Defisit Kalori"
+            android:textSize="28dp"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ll_calorie"
@@ -65,7 +98,7 @@
             android:padding="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/costum_rectangle"
-            app:layout_constraintTop_toBottomOf="@+id/tv_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_Program"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintWidth_percent="1.0">
@@ -103,62 +136,62 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-           <!-- <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/progress_calories"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+            <!-- <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="8dp"
+                 app:layout_constraintTop_toBottomOf="@id/progress_calories"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent">
 
-                <TextView
-                    android:id="@+id/tv_calorie_budget"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Budget"
-                    android:fontFamily="@font/roboto_light"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_calorie_food"/>
+                 <TextView
+                     android:id="@+id/tv_calorie_budget"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Budget"
+                     android:fontFamily="@font/roboto_light"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintEnd_toStartOf="@+id/tv_calorie_food"/>
 
-                <TextView
-                    android:id="@+id/tv_calorie_food"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="Makanan"
-                    android:textColor="?android:textColorPrimary"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_calorie_budget"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_calorie_activity"
-                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                 <TextView
+                     android:id="@+id/tv_calorie_food"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:fontFamily="@font/roboto_light"
+                     android:text="Makanan"
+                     android:textColor="?android:textColorPrimary"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:layout_constraintStart_toEndOf="@id/tv_calorie_budget"
+                     app:layout_constraintEnd_toStartOf="@+id/tv_calorie_activity"
+                     app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
-                <TextView
-                    android:id="@+id/tv_calorie_activity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="Kegiatan"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_calorie_food"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_calorie_total"
-                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                 <TextView
+                     android:id="@+id/tv_calorie_activity"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:fontFamily="@font/roboto_light"
+                     android:text="Kegiatan"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:layout_constraintStart_toEndOf="@id/tv_calorie_food"
+                     app:layout_constraintEnd_toStartOf="@+id/tv_calorie_total"
+                     app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
-                <TextView
-                    android:id="@+id/tv_calorie_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="Total"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_calorie_activity"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-            </androidx.constraintlayout.widget.ConstraintLayout> -->
+                 <TextView
+                     android:id="@+id/tv_calorie_total"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:fontFamily="@font/roboto_light"
+                     android:text="Total"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:layout_constraintStart_toEndOf="@id/tv_calorie_activity"
+                     app:layout_constraintEnd_toEndOf="parent"/>
+             </androidx.constraintlayout.widget.ConstraintLayout> -->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Streak Diary Section -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ll_streak_diary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -182,7 +215,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
-            <!-- Days of the week in a grid format -->
             <GridLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -193,12 +225,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="8dp">
 
-                <!-- Monday -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
-                    <!-- Monday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_monday"
                         android:layout_width="wrap_content"
@@ -231,7 +260,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Tuesday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_tuesday"
                         android:layout_width="wrap_content"
@@ -239,7 +267,7 @@
                         app:layout_constraintStart_toEndOf="@id/container_monday"
                         app:layout_constraintTop_toTopOf="parent"
                         android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"> <!-- Tambahkan jarak di sini -->
+                        android:layout_marginLeft="12dp">
 
                         <TextView
                             android:id="@+id/text_tuesday"
@@ -265,7 +293,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Wednesday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_wednesday"
                         android:layout_width="wrap_content"
@@ -273,7 +300,7 @@
                         app:layout_constraintStart_toEndOf="@id/container_tuesday"
                         app:layout_constraintTop_toTopOf="parent"
                         android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"> <!-- Tambahkan jarak di sini -->
+                        android:layout_marginLeft="12dp">
 
                         <TextView
                             android:id="@+id/text_wednesday"
@@ -299,7 +326,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Thursday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_thursday"
                         android:layout_width="wrap_content"
@@ -307,7 +333,7 @@
                         app:layout_constraintStart_toEndOf="@id/container_wednesday"
                         app:layout_constraintTop_toTopOf="parent"
                         android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"> <!-- Tambahkan jarak di sini -->
+                        android:layout_marginLeft="12dp">
 
                         <TextView
                             android:id="@+id/text_thursday"
@@ -333,7 +359,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Friday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_friday"
                         android:layout_width="wrap_content"
@@ -341,7 +366,7 @@
                         app:layout_constraintStart_toEndOf="@id/container_thursday"
                         app:layout_constraintTop_toTopOf="parent"
                         android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"> <!-- Tambahkan jarak di sini -->
+                        android:layout_marginLeft="12dp">
 
                         <TextView
                             android:id="@+id/text_friday"
@@ -367,7 +392,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Saturday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_saturday"
                         android:layout_width="wrap_content"
@@ -375,7 +399,7 @@
                         app:layout_constraintStart_toEndOf="@id/container_friday"
                         app:layout_constraintTop_toTopOf="parent"
                         android:gravity="center_horizontal"
-                        android:layout_marginLeft="12dp"> <!-- Tambahkan jarak di sini -->
+                        android:layout_marginLeft="12dp">
 
                         <TextView
                             android:id="@+id/text_saturday"
@@ -401,7 +425,6 @@
                             app:layout_constraintStart_toStartOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Sunday -->
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/container_sunday"
                         android:layout_width="wrap_content"
@@ -438,7 +461,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </GridLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout> -->
 
 
         <!-- Horizontal container for Mood and Food Target Sections -->
@@ -448,12 +471,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/ll_streak_diary"
+            app:layout_constraintTop_toBottomOf="@+id/ll_calorie"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Mood Section (Below Food Target Section) -->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ll_mood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -471,7 +493,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
 
-                <!-- Hearts -->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -526,7 +547,7 @@
                         app:layout_constraintStart_toEndOf="@id/mood_4"
                         app:layout_constraintTop_toTopOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout> -->
 
 
             <LinearLayout
@@ -643,13 +664,12 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Third Food Target -->
                 <LinearLayout
                     android:id="@+id/ll_food_target2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/costum_rectangle"
+                    android:background="@drawable/costum_rectangle5"
                     android:padding="16dp"
                     android:orientation="vertical">
 
@@ -694,10 +714,10 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-
+                -->
             </LinearLayout>
 
-            <LinearLayout
+            <!-- <LinearLayout
                 android:id="@+id/ll_button_section"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
@@ -706,13 +726,11 @@
                 android:padding="16dp"
                 android:background="@drawable/costum_rectangle2">
 
-                <!-- Horizontal Layout for Icon and TextView -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- Icon on the left -->
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
@@ -720,7 +738,6 @@
                         android:contentDescription="Icon Activity"
                         android:layout_marginEnd="16dp" />
 
-                    <!-- TextView for Activity Description -->
                     <TextView
                         android:id="@+id/tv_activity_description"
                         android:layout_width="wrap_content"
@@ -732,7 +749,6 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <!-- Button for Adding Activity, centered below -->
                 <Button
                     android:id="@+id/btn_new_section"
                     android:layout_width="wrap_content"
@@ -745,7 +761,7 @@
                     android:textColor="@android:color/white"
                     android:paddingHorizontal="16dp"
                     android:elevation="4dp"/>
-            </LinearLayout>
+            </LinearLayout> -->
 
             <LinearLayout
                 android:layout_width="match_parent"

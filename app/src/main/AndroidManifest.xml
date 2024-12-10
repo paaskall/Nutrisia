@@ -41,22 +41,10 @@
             android:name=".AboutUsActivity"
             android:exported="true" />
         <activity
-            android:name=".BMICalculateActivity"
-            android:exported="true" />
-        <activity
             android:name=".DiaryActivity"
             android:exported="true" />
         <activity
-            android:name=".FoodActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MenuActivity"
-            android:exported="true" />
-        <activity
             android:name=".OcrActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ProgramActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
